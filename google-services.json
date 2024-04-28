@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1092250463743",
+    "project_id": "devconnect-4f483",
+    "storage_bucket": "devconnect-4f483.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092250463743:android:0904b463244fb394754bca",
+        "android_client_info": {
+          "package_name": "com.companyname.devconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHJDgbvfKzVg7Psh8sBg0WsSuYiWIz3RQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

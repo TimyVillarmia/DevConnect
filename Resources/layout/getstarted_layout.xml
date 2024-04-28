@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:text="Dev"
+        android:id="@+id/textView_dev"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline3"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Connect"
+        android:layout_toRightOf="@id/textView_dev"
+        android:textColor="@color/colorAccent"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline3"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/textView_subheadline"
+        android:text="Collaborate on code. Build your network within the developer community."
+        android:layout_below="@id/textView_dev"
+        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/imageView_illustration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_subheadline"
+        android:src="@drawable/main"
+        android:contentDescription="Main illustration" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton_getStarted"
+        android:layout_below="@id/imageView_illustration"
+        android:text="Get Started"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/textView_pretext"
+        android:layout_marginTop="16dp"
+        style="@style/TextAppearance.MdcTypographyStyles.Overline"
+        android:layout_below="@id/materialButton_getStarted"
+        android:textAlignment="center"
+        android:contextClickable="true"
+        android:text="By joining, you agree to share contact information with people in your class. Learn more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

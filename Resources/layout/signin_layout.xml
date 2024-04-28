@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingHorizontal="16dp">
+
+    <ImageView
+        android:id="@+id/imageView_login"
+        android:src="@drawable/login"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="250dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_email"
+        android:hint="Enter email"
+        android:layout_below="@id/imageView_login"
+        android:layout_marginBottom="6dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_pass"
+        app:passwordToggleEnabled="true"
+        android:hint="Enter password"
+        android:layout_below="@id/textInputLayout_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView_forgot"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/colorAccent"
+        android:gravity="right"
+        style="@style/TextAppearance.MdcTypographyStyles.Overline"
+        android:text="Forgot password?"
+        android:layout_below="@id/textInputLayout_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton_signIn"
+        android:layout_marginTop="8dp"
+        android:text="sign in"
+        android:layout_below="@id/textView_forgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_group"
+        android:layout_below="@id/materialButton_signIn"
+        android:layout_marginVertical="16dp"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView_dividerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/materialButton_signIn"
+            style="@style/TextAppearance.MdcTypographyStyles.Overline"
+            android:text="or"
+        />
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/textView_dividerText"
+            android:background="#121212"
+            />
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/textView_dividerText"
+            android:background="#121212"
+            />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_below="@id/relativeLayout_group"
+        android:id="@+id/btnGoogle"
+        android:text="continue with google"
+        app:icon="@drawable/ic_google"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:textColor="@color/colorPrimary"
+        app:iconTint="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            />
+
+    <RelativeLayout
+        android:layout_below="@id/btnGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@id/textView_pretext"
+            style="@style/TextAppearance.MdcTypographyStyles.Overline"
+            android:text="Don't have account?"
+            android:layout_below="@id/btnGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:clickable="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/textView_pretext"
+            android:textColor="@color/colorAccent"
+            style="@style/TextAppearance.MdcTypographyStyles.Overline"
+            android:text="Create account"
+            android:layout_below="@id/btnGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>
