@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
-        android:layout_height="250dp"/>
+        android:layout_height="wrap_content"
+        android:contentDescription="login illustration" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout_email"
@@ -110,8 +111,8 @@
         android:text="continue with google"
         app:icon="@drawable/ic_google"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-        android:textColor="@color/colorPrimary"
         app:iconTint="@null"
+        android:textColor="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
             />

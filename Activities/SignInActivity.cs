@@ -38,8 +38,7 @@ namespace DevConnect.Activities
             materialButton_signIn = FindViewById<MaterialButton>(Resource.Id.materialButton_signIn);
 
             materialButton_signIn.Click += MaterialButton_signIn_Click;
-            materialButton_signIn.Click += delegate { ValidateField(textInputLayout_email); };
-            materialButton_signIn.Click += delegate { ValidateField(textInputLayout_pass); };
+
 
             textInputLayout_email.EditText.TextChanged += delegate { ValidateField(textInputLayout_email); };
             textInputLayout_pass.EditText.TextChanged += delegate { ValidateField(textInputLayout_pass); };
@@ -90,15 +89,15 @@ namespace DevConnect.Activities
             string email = textInputLayout_email.EditText?.Text.Trim();
             string pass = textInputLayout_pass.EditText?.Text.Trim();
 
-            //if (string.IsNullOrEmpty(email) ||
-            //    string.IsNullOrEmpty(pass))
-            //{
-            //    //textFieldFullname.Error = "Must not be empty.";
-            //    textInputLayout_email.Error = "Must not be empty.";
-            //    textInputLayout_pass.Error = "Must not be empty.";
+            if (string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(pass))
+            {
+                //textFieldFullname.Error = "Must not be empty.";
+                textInputLayout_email.Error = "Must not be empty.";
+                textInputLayout_pass.Error = "Must not be empty.";
 
-            //    return;
-            //}
+                return;
+            }
 
             auth.SignInWithEmailAndPassword(email, pass)
                 .AddOnCompleteListener(this, this);
