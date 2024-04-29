@@ -17,9 +17,23 @@
         android:contentDescription="create illustration" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_createName"
+        android:hint="Enter full name"
+        android:layout_below="@id/imageView_create"
+        android:layout_marginBottom="6dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout_createEmail"
         android:hint="Enter email"
-        android:layout_below="@id/imageView_create"
+        android:layout_below="@id/textInputLayout_createName"
         android:layout_marginBottom="6dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
