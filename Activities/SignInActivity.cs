@@ -1,8 +1,10 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Gms.Tasks;
+using Android.Nfc;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using DevConnect.Common;
@@ -14,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace DevConnect.Activities
 {
@@ -23,6 +26,7 @@ namespace DevConnect.Activities
         TextInputLayout textInputLayout_email;
         TextInputLayout textInputLayout_pass;
         MaterialButton materialButton_signIn;
+        TextView textView_create;
 
         FirebaseAuth auth;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -36,12 +40,20 @@ namespace DevConnect.Activities
             textInputLayout_email = FindViewById<TextInputLayout>(Resource.Id.textInputLayout_email);
             textInputLayout_pass = FindViewById<TextInputLayout>(Resource.Id.textInputLayout_pass);
             materialButton_signIn = FindViewById<MaterialButton>(Resource.Id.materialButton_signIn);
+            textView_create = FindViewById<TextView>(Resource.Id.textView_create);
 
             materialButton_signIn.Click += MaterialButton_signIn_Click;
+            textView_create.Click += TextView_create_Click;
 
 
             textInputLayout_email.EditText.TextChanged += delegate { ValidateField(textInputLayout_email); };
             textInputLayout_pass.EditText.TextChanged += delegate { ValidateField(textInputLayout_pass); };
+        }
+
+        private void TextView_create_Click(object sender, EventArgs e)
+        {
+            Intent create = new Intent(this, typeof(SignUpActivity));
+            StartActivity(create);
         }
 
         private void ValidateField(TextInputLayout field)
@@ -100,7 +112,7 @@ namespace DevConnect.Activities
             }
 
             auth.SignInWithEmailAndPassword(email, pass)
-                .AddOnCompleteListener(this, this);
+                              .AddOnCompleteListener(this, this);
 
         }
 
@@ -111,7 +123,7 @@ namespace DevConnect.Activities
             Finish();
         }
 
-        public void OnComplete(Task task)
+        public void OnComplete(Android.Gms.Tasks.Task task)
         {
             if (task.IsSuccessful)
             {
@@ -121,9 +133,33 @@ namespace DevConnect.Activities
             }
             else
             {
-                Toast.MakeText(this, task.Exception.Message, ToastLength.Short).Show();
+                try
+                {
+                    throw task.Exception;
+                }
+                catch (FirebaseAuthWeakPasswordException e)
+                {
+                    Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+                }
+                catch (FirebaseAuthInvalidCredentialsException e)
+                {
+                    Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+
+                }
+                catch (FirebaseAuthUserCollisionException e)
+                {
+                    Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+
+                }
+                catch (Exception e)
+                {
+                    Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+
+                }
             }
 
         }
+
+  
     }
 }
