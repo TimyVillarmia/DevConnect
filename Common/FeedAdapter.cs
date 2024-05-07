@@ -40,19 +40,19 @@ namespace DevConnect.Common
             myHolder.poster_handler.Text = currentModel.poster_handler;
             myHolder.post_time.Text = currentModel.post_time;
             myHolder.post_description.Text = currentModel.post_description;
-            //Picasso
-            //    .Get()
-            //    .Load(currentModel.post_image)
-            //    .Fit()
-            //    .CenterCrop()
-            //    .NoFade()
-            //    .Into(myHolder.post_image);
+            Picasso
+                .Get()
+                .Load(currentModel.post_image)
+                .Fit()
+                .CenterCrop()
+                .NoFade()
+                .Into(myHolder.post_image);
 
         }
 
         public override ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.feed_layout_frag, parent, false);
+            View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.post_layout, parent, false);
             return new FeedAdapterViewHolder(itemView);
         }
 
@@ -72,8 +72,8 @@ namespace DevConnect.Common
         {
             poster_name = (TextView)itemView.FindViewById(Resource.Id.textView_poster_name);
             poster_handler = (TextView)itemView.FindViewById(Resource.Id.textView_poster_handler);
-            post_time = (TextView)itemView.FindViewById(Resource.Id.time);
-            post_description = (TextView)itemView.FindViewById(Resource.Id.design_bottom_sheet);
+            post_time = (TextView)itemView.FindViewById(Resource.Id.textView_post_time);
+            post_description = (TextView)itemView.FindViewById(Resource.Id.textView_post_description);
             post_image = (ImageView)itemView.FindViewById(Resource.Id.imageView_post_image);
 
 
