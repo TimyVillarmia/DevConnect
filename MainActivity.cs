@@ -8,6 +8,9 @@ using AndroidX.AppCompat.App;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
 using Android.Util;
+using AndroidX.Fragment.App;
+using DevConnect.Fragments;
+using Google.Android.Material.BottomNavigation;
 
 
 namespace DevConnect
@@ -15,18 +18,31 @@ namespace DevConnect
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
     public class MainActivity : AppCompatActivity
     {
+        AndroidX.Fragment.App.FragmentManager fragmentManager;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
+            //Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            //SetSupportActionBar(toolbar);
+            fragmentManager = SupportFragmentManager;
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            ReplaceFragment(new FeedFragment(), "Feed");
+
+            BottomNavigationView fab = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
             fab.Click += FabOnClick;
         }
+
+        public void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
+        {
+            fragmentManager = SupportFragmentManager;
+
+            fragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, fragment, tag)
+                .Commit();
+        }
+
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {

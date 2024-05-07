@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Refractored.Controls.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_marginRight="12dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/main"/>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/profile_image"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:text="Timy Villarmia"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/textView_poster_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="2dp"
+        android:layout_alignStart="@id/textView_poster_name"
+        android:layout_below="@id/textView_poster_name"
+        style="@style/TextAppearance.MaterialComponents.Overline"
+        android:textAllCaps="false"
+        android:text="@tmyyyy"
+        android:textColor="#99121212"
+        android:id="@+id/textView_poster_handler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@id/textView_poster_name"
+        style="@style/TextAppearance.MaterialComponents.Overline"
+        android:textAllCaps="false"
+        android:text="one year ago"
+        android:textColor="#99121212"
+        android:id="@+id/textView_post_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/profile_image"
+        android:text="@string/lorem"
+        android:id="@+id/textView_post_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+    <ImageView
+        android:id="@+id/imageView_post_image"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/textView_post_description"
+        android:src="@drawable/main"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <Button
+        app:icon="@drawable/favorite_24px"
+        android:layout_below="@id/imageView_post_image"
+        android:id="@+id/button_react"
+        android:layout_alignStart="@id/imageView_post_image"
+        style="@style/Widget.App.Button.Button.IconOnly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        app:icon="@drawable/chat_bubble_24px"
+        android:layout_below="@id/imageView_post_image"
+        android:layout_toRightOf="@id/button_react"
+        android:id="@+id/button_comments"
+        style="@style/Widget.App.Button.Button.IconOnly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        app:icon="@drawable/send_24px"
+        android:layout_alignEnd="@id/textView_post_time"
+        android:layout_below="@id/imageView_post_image"
+        android:id="@+id/button_share"
+        style="@style/Widget.App.Button.Button.IconOnly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+</RelativeLayout>
