@@ -16,7 +16,7 @@ using Google.Android.Material.BottomNavigation;
 namespace DevConnect
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
     {
         AndroidX.Fragment.App.FragmentManager fragmentManager;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -31,8 +31,22 @@ namespace DevConnect
 
             ReplaceFragment(new FeedFragment(), "Feed");
 
-            BottomNavigationView fab = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
-            fab.Click += FabOnClick;
+            BottomNavigationView bottom = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
+            bottom.SetOnNavigationItemSelectedListener(this);
+        }
+
+
+        public bool OnNavigationItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+
+            if (id == Resource.Id.messages)
+            {
+
+            }
+
+            return true;
+
         }
 
         public void ReplaceFragment(AndroidX.Fragment.App.Fragment fragment, string tag)
@@ -74,5 +88,6 @@ namespace DevConnect
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-	}
+
+    }
 }
