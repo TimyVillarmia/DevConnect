@@ -4882,10 +4882,16 @@ namespace DevConnect
 			public const int ic_launcher = 2131689472;
 			
 			// aapt resource value: 0x7F0F0001
-			public const int ic_launcher_foreground = 2131689473;
+			public const int ic_launcher_background = 2131689473;
 			
 			// aapt resource value: 0x7F0F0002
-			public const int ic_launcher_round = 2131689474;
+			public const int ic_launcher_foreground = 2131689474;
+			
+			// aapt resource value: 0x7F0F0003
+			public const int ic_launcher_monochrome = 2131689475;
+			
+			// aapt resource value: 0x7F0F0004
+			public const int ic_launcher_round = 2131689476;
 			
 			static Mipmap()
 			{
