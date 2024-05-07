@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">DevConnect</string>
     <string name="action_settings">Settings</string>
-<<<<<<< Updated upstream
-=======
+
     <string name="bottom_nav_home">Home</string>
     <string name="bottom_nav_messages">Messages</string>
     <string name="bottom_nav_notifications">Notifications</string>
     <string name="bottom_nav_profile">Profile</string>
 	<string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at finibus sem, malesuada placerat mauris.
 	Curabitur consectetur augue eget dui feugiat eleifend. Fusce pretium</string>
-
->>>>>>> Stashed changes
 </resources>

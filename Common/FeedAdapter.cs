@@ -34,33 +34,33 @@ namespace DevConnect.Common
         public override void OnBindViewHolder(ViewHolder holder, int position)
         {
 
-            Adapter1ViewHolder myHolder = holder as Adapter1ViewHolder;
+            FeedAdapterViewHolder myHolder = holder as FeedAdapterViewHolder;
             PostModel currentModel = _feedList[position];
             myHolder.poster_name.Text = currentModel.poster_name;
             myHolder.poster_handler.Text = currentModel.poster_handler;
             myHolder.post_time.Text = currentModel.post_time;
             myHolder.post_description.Text = currentModel.post_description;
-            Picasso
-                .Get()
-                .Load(currentModel.post_image)
-                .Fit()
-                .CenterCrop()
-                .NoFade()
-                .Into(myHolder.post_image);
+            //Picasso
+            //    .Get()
+            //    .Load(currentModel.post_image)
+            //    .Fit()
+            //    .CenterCrop()
+            //    .NoFade()
+            //    .Into(myHolder.post_image);
 
         }
 
         public override ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
             View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.feed_layout_frag, parent, false);
-            return new Adapter1ViewHolder(itemView);
+            return new FeedAdapterViewHolder(itemView);
         }
 
         public override int ItemCount => _feedList.Count;
     }
 
 
-    public class Adapter1ViewHolder : ViewHolder
+    public class FeedAdapterViewHolder : ViewHolder
     {
         public TextView poster_name;
         public TextView poster_handler;
@@ -68,7 +68,7 @@ namespace DevConnect.Common
         public TextView post_description;
         public ImageView post_image;
 
-        public Adapter1ViewHolder(View itemView) : base(itemView)
+        public FeedAdapterViewHolder(View itemView) : base(itemView)
         {
             poster_name = (TextView)itemView.FindViewById(Resource.Id.textView_poster_name);
             poster_handler = (TextView)itemView.FindViewById(Resource.Id.textView_poster_handler);
